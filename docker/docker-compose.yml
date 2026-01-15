@@ -361,7 +361,7 @@ services:
     image: supabase/logflare:1.26.13
     restart: unless-stopped
     ports:
-      - 4000:4000
+      - ${analytics_port}:4000
     # Uncomment to use Big Query backend for analytics
     # volumes:
     #   - type: bind
