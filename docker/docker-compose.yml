@@ -262,6 +262,17 @@ services:
       db:
         # Disable this if you are using an external Postgres database
         condition: service_healthy
+
+      # === GOOGLE OAUTH ===
+      GOTRUE_EXTERNAL_GOOGLE_ENABLED: "true"
+      GOTRUE_EXTERNAL_GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOTRUE_EXTERNAL_GOOGLE_SECRET: ${GOOGLE_CLIENT_SECRET}
+      # Opcional, mas útil em self-host se você tiver múltiplos domínios
+      GOTRUE_EXTERNAL_GOOGLE_REDIRECT_URI: ${API_EXTERNAL_URL}/auth/v1/callback
+
+
+
+        
       rest:
         condition: service_started
       imgproxy:
